@@ -40,12 +40,19 @@ VECTORDB_MODEL="gpt-3.5-turbo"
 **Run**
 
 ```bash
+# create virtual environment
+python3 -m venv venv
+
+# activate
+source venv/bin/activate
+
 # install requirements
 pip install -r requirements.txt
 
 # to generate test data
 make data_generate
 
-# to evaluate user input data (probability, accuracy)
+# to evaluate user input data 
+# (probability, accuracy, confidence)
 make data_evaluate
 ```
