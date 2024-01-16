@@ -54,5 +54,39 @@ def TF_IDF():
 
     print("Average Prompt Embedding:", average_prompt_embedding)
 
+def _conf(**kwargs):
+    from sklearn.feature_extraction.text import TfidfVectorizer
+    from sklearn.metrics.pairwise import cosine_similarity
+    import numpy as np
+
+    # Sample contexts and user questions
+    contexts = ["Context A is about topic X.", "Context B focuses on topic Y.", "Context C covers topic Z."]
+    user_questions = ["Can you provide information on topic X?", "Tell me about topic Y.", "What is covered in context C?"]
+
+    # Vectorize contexts and user questions
+    vectorizer = TfidfVectorizer()
+    context_vectors = vectorizer.fit_transform(contexts)
+    user_question_vectors = vectorizer.transform(user_questions)
+
+    # Calculate cosine similarity between each user question and each context
+    similarities = cosine_similarity(user_question_vectors, context_vectors)
+
+    # Set a similarity threshold (you can adjust this based on your requirements)
+    threshold = 0.5
+
+    # Construct the confusion matrix
+    confusion_matrix = np.zeros((len(contexts), len(user_questions)), dtype=int)
+
+    for i in range(len(contexts)):
+        for j in range(len(user_questions)):
+            if similarities[j, i] >= threshold:
+                confusion_matrix[i, j] = 1  # Match
+            else:
+                confusion_matrix[i, j] = 0  # No match
+
+    # Print the confusion matrix
+    print("Confusion Matrix:")
+    print(confusion_matrix)
+
 
 TF_IDF()
