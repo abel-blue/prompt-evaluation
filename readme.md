@@ -1,6 +1,6 @@
 <div align="center">
   <!-- <img src="assets/bot_nana_logo.png" alt="logo" height="40%" width="50%"/> -->
-  <h1><b>nana-backend-api</b></h1>
+  <h1><b>rag test starter</b></h1>
 
 </div>
 
@@ -52,7 +52,6 @@ pip install -r requirements.txt
 # to generate test data
 make data_generate
 
-# to evaluate user input data 
-# (probability, accuracy, confidence)
+# to evaluate user input data (prob., accur., confid.)
 make data_evaluate
 ```
