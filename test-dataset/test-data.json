@@ -13,7 +13,7 @@
     },
     {
         "user": "What project did OpenAI showcase in 2018?",
-        "assistant": "OpenAI Five, which trained five AI agents to play Dota 2"
+        "assistant": "OpenAI Five, which trained five AI agents to play 'Dota 2'"
     },
     {
         "user": "How did the AI agents in OpenAI Five work together?",

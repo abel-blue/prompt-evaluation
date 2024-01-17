@@ -1,10 +1,18 @@
 import os
 import json
 import sys
+
+import os
 from openai import OpenAI
 from math import exp
 import numpy as np
+
+current_directory = os.getcwd()
+print(current_directory)
+sys.path.append(current_directory)
+
 from utility.env_manager import get_env_manager
+
 env_manager = get_env_manager()
 client = OpenAI(api_key=env_manager['openai_keys']['OPENAI_API_KEY'])
 
